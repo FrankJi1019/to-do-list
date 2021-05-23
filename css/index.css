@@ -1,0 +1,364 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?m7c28j');
+    src:  url('../fonts/icomoon.eot?m7c28j#iefix') format('embedded-opentype'),
+          url('../fonts/icomoon.ttf?m7c28j') format('truetype'),
+          url('../fonts/icomoon.woff?m7c28j') format('woff'),
+          url('../fonts/icomoon.svg?m7c28j#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    user-select: none;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+body {
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+
+/* 头部黑色标题 */
+header {
+    height: 60px;
+    background-color: #1b1b1b;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+header .add-event {
+    border: 30px;
+    overflow: hidden;
+}
+
+header input {
+    float: right;
+    outline: none;
+    height: 32px;
+    border: none;
+    width: 200px;
+    text-align: center;
+    margin-top: 14px;
+    border-radius: 3px 0 0 3px;
+}
+
+header .submit {
+    cursor: pointer;
+    float: right;
+    color: black;
+    background-color: #ccc;
+    height: 32px;
+    width: 100px;
+    text-align: center;
+    margin-top: 14px;
+    line-height: 32px;
+    border-radius: 0 3px 3px 0;
+}
+
+/* 事项部分 */
+.to-do-list .event-list {
+    margin-top: 40px;
+    min-height: 240px;
+}
+
+.to-do-list .event-container {
+    overflow: hidden;
+    /* background-color: red; */
+    width: 300px;
+    height: 500px;
+    margin-top: 10px;
+    padding: 10px 10px 0;
+}
+
+.to-do-list-fl {
+    min-width: 300px;
+    float: left;
+    margin-left: 170px;
+}
+
+.to-do-list-fr {
+    min-width: 300px;
+    float: right;
+    margin-right: 170px;
+}
+
+.to-do-list-sep {
+    /* width: 260px; */
+    width: 2px;
+    margin: 70px 109px 0;
+    background-color: #ccc;
+    float: left;
+    height: 470px;
+}
+
+.to-do-list .event-list h3,
+.to-do-list .event-list h3 span {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.event-list li {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    /* background-color: #E5E5E5; */
+    /* background-image: linear-gradient(to center, red, blue); */
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    color: #696969;
+    box-shadow: 0px 0px 10px 1.9px rgba(0, 0, 0, .1);
+}
+
+.event-list li p {
+    display: inline-block;
+    height: 100%;
+    line-height: 50px;
+    margin-left: 25px;
+}
+
+.event-list li i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.event-list li i:hover {
+    color: darkgrey;
+}
+
+.event-list li input {
+    display: none;
+    outline: none;
+    height: 30px;
+    width: 180px;
+    margin-top: 10px;
+    margin-left: 27px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+.not-completed li i::after {
+    content: "\e9ac";
+    font-family: 'icomoon';
+    font-style: normal;
+    font-size: 18px;
+    padding: 3px;
+    font-weight: 400;
+}
+
+.completed li i::after {
+    content: "\e9ac";
+    font-family: 'icomoon';
+    font-style: normal;
+    font-size: 18px;
+    padding: 3px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+.completed li i:hover::after {
+    color: #808080;
+}
+
+.not-completed div.checked {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #bbb;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+}
+
+.completed div.checked {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+}
+
+.completed li p {
+    text-decoration: line-through;
+    margin-left: 30px;
+    color: #ccc;
+}
+
+.completed div.checked::before {
+    content: "\e900";
+    font-family: 'icomoon';
+    position: absolute;
+    top: -5px;
+    left: 1px;
+    font-size: 25px;
+    color: #ccc;
+}
+
+.not-completed li.priority-4::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+.not-completed li.priority-3::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: orange;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+.not-completed li.priority-2::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+.not-completed li.priority-1::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: grey;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+.completed li.priority-4::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: #FFc0c0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+.completed li.priority-3::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: #FFFFc0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+.completed li.priority-2::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: #c0FFFF;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+.completed li.priority-1::before {
+    content: "";
+    width: 5px;
+    height: 30px;
+    background-color: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+/* .event-list li.priority-4 {
+    background-color: #FFE6E6;
+}
+
+.event-list li.priority-3 {
+    background-color: #FFFFE6;
+}
+
+.event-list li.priority-2 {
+    background-color: #E6FFFF;
+}
+
+.event-list li.priority-1 {
+    background-color: #F9F9F9;
+} */
+
+/* 右键菜单 */
+.context-menu {
+    position: absolute;
+    display: none;
+    padding: 5px 0;
+    box-shadow: 0px 0px 10px 1.9px rgba(0, 0, 0, .1);
+    background-color: white;
+    border-radius: 3px;
+}
+
+.context-menu li {
+    padding: 10px 20px;
+}
+
+.context-menu li:nth-child(1):hover {
+    background-color: #FFC8C8;
+}
+
+.context-menu li:nth-child(2):hover {
+    background-color: #FFFFB4;
+}
+
+.context-menu li:nth-child(3):hover {
+    background-color: #BBFFFF;
+}
+
+.context-menu li:nth-child(4):hover {
+    background-color: #F0F0F0;
+}
